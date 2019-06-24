@@ -101,16 +101,11 @@
 
   <script>
     (function () {
-      const body = document.querySelector('body');
       const scollIcon = document.querySelector('.scoll-icon');
 
-      body.addEventListener('scroll', (e) => {
+      window.addEventListener('scroll', (e) => {
         const windowYOffset = window.pageYOffset;
-        if (windowYOffset > 100) {
-          scollIcon.style.display = 'block';
-        } else {
-          scollIcon.style.display = 'none';
-        }
+        scollIcon.style.display = windowYOffset > 100 ? 'block' : 'none';
       });
 
       scollIcon.addEventListener('click', () => {
